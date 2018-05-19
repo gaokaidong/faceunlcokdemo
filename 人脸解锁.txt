@@ -1,0 +1,32 @@
+人脸解锁的相关代码：
+1.camera的工具类，打开camera；
+2.判断存储人脸特征值key（Constants.SHARE_FACE_FEATURE_KEY） 存在不存在，即DataUtils.getPersons()，如果为空或者size()<1, 人脸识别值不存在，不能进行人脸识别。
+3.首先需要录入人脸识别信息：
+(1)确定要录入的面部信息的Rotation，一般录入：FaceRotation.FaceFront, FaceRotation.FaceLeft, FaceRotation.FaceRight
+(2)获取预览数据接口是：CameraManagerDelegate 的onPreviewFrame 方法，用来接收预览数据。而在Camera.PreviewCallback的里面，调用了该方法，而录入信息和解锁时都调用了该方法来获取数据。
+(3)获取一个byte数组，传到FaceUnlockSdk的detectFaceList中，第一个传入时，mFaceFeatureList.size()==0,所以首先验证的是rotationList.get(0)也就是正脸的数据，调用detectSpecifiedFace，按照面部信息的rotation来处理。在该方法中调用detectFace来判断有没有人脸，而在detectFace()方法中首先获取到照片size，然后是照片中人脸的角度degree，将这些值传入到detect方法中检测，而直接调用CRFace的detectYUV()方法(native 方法)，返回该帧图片中检测到的人脸信息，将返回的int数组包装成FaceDetectInfo，当判断hasFace()为true，返回这个人脸检测数据FaceDetectInfo到detectSpecifiedFace方法中，根据采集到的数据，更新人脸检测状态，有以下5个状态：
+public enum FaceDetectionState
+{
+    人脸摆动角度过大:FACE_OVER_SWING
+    检测到人脸:FACE_DETECTED
+    未检测到人脸:FACE_UNDETECED
+    人脸方向不对:FACE_WRONG_ROTATION
+    人脸采集成功:FACE_DETECTION_SUCCESS;
+}
+根据FaceDetectInfo，使用onFaceDetectionState 来更新状态，而是在子类实现的，其中调用了updateFaceDetectionState来更新提示语。
+继续回到detectSpecifiedFace方法，之后跳帧处理，调用extractFaceFeature方法来抽取人脸信息特征值，在该方法中，抽取人脸坐标值，调用extractYUV来抽取人脸特征，根据返回值判断抽取成功或失败：
+public enum  ExtractFeatureState
+{
+    成功：EXTRACT_SUCCESS(256),
+    人脸框错误：INCORRECT_FACE_POSITON(-2),
+    抽取特征失败：EXTRACT_FAILURE(-3),
+    图片过大：PICTURE_SIZE_TOO_LARGE(-4),
+    授权失败：AUTHORIZATION_FAILED(-5),
+    未知状态：UNKNOWN(0);
+}
+根据特征值和特征角度创建FaceFeature，在根据FaceFeature和抽取特征值状态ExtractFeatureState来创建抽取特征值结果ExtractFaceInfo，将结果返回到detectFaceList方法里，然后判断mFaceFeatureList.size()和同个人检测isEnableSamePersonDetect(),看当前的feature和第一个存储的feature是否match(最后还是调用CRFace的match方法比对特征),
+返回相似度和与正脸的匹配度mFrontFaceMatchValue比对，如果相似，创建当前的FaceFeature，add到mFaceFeatureList中，然后回调使用onExtractFeatureSuccess方法，更新人脸角度提示，最后判断mFaceFeatureList 和mRotationList size()的比对，如果相等，则创建person对象，设置基础FaceFeature，回调使用onExtractFeatureListCompeleted方法，弹出对话框，调用DataUtils.savePerson()方法，将数据持久化保存到SharedPreferences里面。
+
+
+
+4.人脸解锁：

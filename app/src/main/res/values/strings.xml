@@ -1,0 +1,87 @@
+<resources>
+    <string name="app_name">人脸解锁</string>
+    
+    <string name="lsq_add_password">添加密码</string>
+    <string name="lsq_add_face_info">录入面部信息</string>
+    <string name="lsq_input_password">输入密码</string>
+    <string name="lsq_input_password_again">请再输入密码</string>
+    <string name="lsq_input_modify_password">输入新密码</string>
+    <string name="lsq_input_modify_password_again">请再输入新密码</string>
+    <string name="lsq_submit">提交</string>
+    <string name="lsq_recognition_start">开始识别</string>
+    <string name="lsq_face_unlock_hint">你可以通过被手机识别的面部解锁屏幕，在室内正常光线下让你的手机识别你的面部</string>
+    <string name="lsq_face_unlock_risk_hint">面部解锁安全性低于密码和指纹，开启后可能对隐私和财产造成安全风险，请谨慎选择开启</string>
+    <string name="lsq_face_dect_no_one">未检测到人脸</string>
+    <string name="lsq_face_dect_face_info_incomplete">面部信息不全</string>
+    <string name="lsq_face_dect_angel_hint">请将手机正对人脸</string>
+    <string name="lsq_face_dect_progress">人脸信息录入已完成 </string>
+    <string name="lsq_face_dect_finish">完成</string>
+    <string name="lsq_login_success">登录成功</string>
+    <string name="lsq_modify_password">修改密码</string>
+    <string name="lsq_face_dect_restart">重新检测人脸</string>
+    <string name="lsq_face_info_add_success">请保持手机平稳/录入成功</string>
+    <string name="lsq_add_face_info_hint">添加面部信息提示</string>
+    <string name="lsq_face_detect_title">面部信息录入</string>
+    <string name="lsq_clear_password">清空密码</string>
+    <string name="lsq_password_not_right">密码不正确</string>
+    <string name="lsq_password_right">的设备</string>
+    <string name="lsq_modify_face_info">修改面部信息</string>
+    <string name="lsq_face_unlock_failed">无匹配人员</string>
+    <string name="lsq_password_setting_hint">密码必须是6位数字</string>
+    <string name="lsq_face_unlock">人脸解锁</string>
+    <string name="lsq_detect_front_face">采集正脸: 保持面孔在取景框内</string>
+    <string name="lsq_detect_left_face">采集左侧：请向左转</string>
+    <string name="lsq_detect_right_face">采集右侧：请向右转</string>
+    <string name="lsq_detect_top_face">采集上侧：请抬头</string>
+    <string name="lsq_detect_bottom_face">采集下侧：请低头</string>
+    <string name="lsq_detect_front_face_success">正脸采集成功</string>
+    <string name="lsq_detect_left_face_success">左侧采集成功</string>
+    <string name="lsq_detect_right_face_success">右侧采集成功</string>
+    <string name="lsq_detect_top_face_success">上侧采集成功</string>
+    <string name="lsq_detect_bottom_face_success">下侧采集成功</string>
+    <string name="lsq_face_unlock_success">认证成功</string>
+    <string name="lsq_face_unlock_confirm">确认</string>
+    <string name="lsq_face_detect_not_same_person">采集信息与正脸不属于同一个人</string>
+    <string name="lsq_face_wrong_rotation">人脸角度不对</string>
+    <string name="lsq_face_over_swing">人脸摆动幅度超出最大限制</string>
+    <string name="lsq_face_detected">请保持手机平稳</string>
+    <string name="lsq_face_detection_success">采集成功</string>
+    <string name="lsq_confirm">确认</string>
+    <string name="lsq_cancel">取消</string>
+    <string name="lsq_name">姓名</string>
+    <string name="lsq_back_homepage">返回首页</string>
+    <string name="lsq_unlock_failed">认证失败</string>
+    <string name="lsq_setting">设置</string>
+
+    <!-- Toast提示信息 -->
+    <string name="lsq_password_not_same">密码不一致</string>
+    <string name="lsq_password_submit_success">密码提交成功</string>
+    <string name="lsq_password_submit_failed">密码提交失败</string>
+    <string name="lsq_password_null">密码不能为空</string>
+    <string name="lsq_input_password_first">请先设置密码</string>
+    <string name="lsq_password_length_not_right">密码只能为6位</string>
+    <string name="lsq_deny_permission">权限被拒绝</string>
+    <string name="lsq_face_perimission_lack">人脸检测授权过期</string>
+    <string name="lsq_face_info_save_success">人脸信息采集成功</string>
+    <string name="lsq_face_info_lack">请先录入人脸信息</string>
+    <string name="lsq_exit_info">再按一次将退出应用</string>
+    <string name="lsq_no_face">未检测到人脸</string>
+    <string name="lsq_live_attack">活体攻击</string>
+    <string name="lsq_not_same_person">不是本人</string>
+
+
+    <!-- 设置页面 -->
+    <string name="lsq_setting_live_detection">活体检测</string>
+    <string name="lsq_setting_save_unlock_picture">保存解锁图片</string>
+    <string name="lsq_setting_unlock_threshold">人脸解锁阈值</string>
+    <string name="lsq_setting_user_center">用户管理</string>
+    <string name="lsq_setting_save_piture_hint">文件保存根目录: /sdcard/DCIM/lh/</string>
+    <string name="lsq_setting_live_threahold">活体阈值</string>
+    <string name="lsq_setting_timing_threahold">解锁倒计时(单位: ms)</string>
+    <string name="lsq_live_mode">活体模式</string>
+    <string name="lsq_strict_mode">严格模式</string>
+    <string name="lsq_unstrict_mode">非严格模式</string>
+    <string name="lsq_version_code">版本号: 1.12.0</string>
+    <string name="lsq_live_threahold_hint">阈值设置越大，活体检测要求越弱假体通过率越高</string>
+
+</resources>

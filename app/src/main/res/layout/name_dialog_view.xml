@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="300dp"
+    android:layout_height="200dp"
+    android:background="@color/lsq_color_white"
+    android:padding="@dimen/lsq_dimen_15">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_centerVertical="true">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/lsq_name"
+        android:textSize="@dimen/lsq_dimen_15"
+        android:textColor="@color/lsq_color_red"/>
+
+    <EditText
+        android:id="@+id/lsq_edit_text"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/lsq_dimen_50"
+        android:layout_marginLeft="@dimen/lsq_dimen_15"
+        android:theme="@style/NameEditText"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="@dimen/lsq_dimen_15"
+        android:layout_marginBottom="@dimen/lsq_dimen_15">
+        <Button
+            android:id="@+id/lsq_cancel_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:text="@string/lsq_cancel"
+            android:textSize="@dimen/lsq_dimen_15"
+            android:textColor="@color/lsq_color_red"/>
+
+
+        <Button
+            android:id="@+id/lsq_confirm_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:layout_marginLeft="@dimen/lsq_dimen_15"
+            android:text="@string/lsq_confirm"
+            android:textSize="@dimen/lsq_dimen_15"
+            android:textColor="@color/lsq_color_red"/>
+    </LinearLayout>
+</RelativeLayout>

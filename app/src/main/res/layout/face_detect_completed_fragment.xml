@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/lsq_color_white"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <ImageView
+        android:layout_width="@dimen/lsq_dimen_150"
+        android:layout_height="@dimen/lsq_dimen_150"
+        android:background="@mipmap/lsq_face_detect_completed"
+        android:layout_marginTop="@dimen/lsq_dimen_150"/>
+
+    <Button
+        android:id="@+id/lsq_face_dect_finish_btn"
+        style="@style/lsq_button_setting"
+        android:text="@string/lsq_face_dect_finish"
+        android:layout_marginTop="@dimen/lsq_dimen_50"
+        android:background="@color/lsq_color_purple"
+        />
+
+</LinearLayout>

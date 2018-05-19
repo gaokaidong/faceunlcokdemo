@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <!-- 高度40 该高度受限于thumb高度,-->
+    <!--<size android:height="10dp"/>-->
+    <!-- 圆角弧度 20 -->
+	<corners android:radius="10dp"/>
+	<!-- 变化率 -->
+    <gradient
+        android:endColor="#F5BCBC"
+        android:startColor="#F5BCBC" />
+
+
+
+</shape>

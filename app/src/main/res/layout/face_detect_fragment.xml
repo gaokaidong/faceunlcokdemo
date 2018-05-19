@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/lsq_color_white"
+    android:gravity="center_horizontal">
+
+    <include
+        android:id="@+id/lsq_navigation_bar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        layout="@layout/navigation_bar_view"/>
+
+    <TextView
+        android:id="@+id/lsq_face_detect_step"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="@dimen/lsq_dimen_15"
+        android:layout_marginTop="@dimen/lsq_dimen_15"
+        />
+
+    <RelativeLayout
+        android:id="@+id/lsq_camera_view_wrap"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/lsq_dimen_15">
+
+        <SurfaceView
+            android:id="@+id/previewSurface"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+
+        <ImageView
+            android:id="@+id/lsq_arrow_left"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:scaleType="fitCenter"
+            android:src="@mipmap/lsq_arrow_left"
+            android:layout_centerVertical="true"
+            android:visibility="invisible"
+            android:layout_alignLeft="@+id/previewSurface"/>
+
+        <ImageView
+            android:id="@+id/lsq_arrow_right"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:scaleType="fitCenter"
+            android:src="@mipmap/lsq_arrow_right"
+            android:layout_centerVertical="true"
+            android:visibility="invisible"
+            android:layout_alignRight="@+id/previewSurface"/>
+
+        <ImageView
+            android:id="@+id/lsq_arrow_top"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:scaleType="fitCenter"
+            android:src="@mipmap/lsq_arrow_top"
+            android:layout_centerHorizontal="true"
+            android:visibility="invisible"
+            android:layout_alignTop="@+id/previewSurface"/>
+
+        <ImageView
+            android:id="@+id/lsq_arrow_bottom"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:scaleType="fitCenter"
+            android:src="@mipmap/lsq_arrow_bottom"
+            android:layout_centerHorizontal="true"
+            android:visibility="invisible"
+            android:layout_alignBottom="@+id/previewSurface"/>
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/lsq_face_dect_state_text"
+        android:layout_marginTop="@dimen/lsq_dimen_15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/lsq_color_black"
+        android:textSize="@dimen/lsq_dimen_15"
+        />
+
+    <TextView
+        android:id="@+id/lsq_face_detect_hint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+
+</LinearLayout>

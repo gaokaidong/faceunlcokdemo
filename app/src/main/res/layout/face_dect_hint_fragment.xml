@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/lsq_color_white"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/lsq_navigation_bar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_gravity="center_vertical"
+        layout="@layout/navigation_bar_view"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="@dimen/lsq_dimen_30">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp">
+
+        <ImageView
+            android:id="@+id/lsq_face_image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@mipmap/lsq_face_detect_hint"
+            android:layout_centerInParent="true"
+            android:scaleType="fitCenter"
+            />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/lsq_face_image_list_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/lsq_dimen_15"
+            android:text="@string/lsq_face_unlock_hint"
+            android:textSize="18dp"
+            android:textAlignment="center"
+            android:textColor="@color/lsq_color_gray" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/lsq_dimen_30"
+            android:textSize="18dp"
+            android:text="@string/lsq_face_unlock_risk_hint"
+            android:textAlignment="center"
+            android:textColor="@color/lsq_color_red" />
+
+    <Button
+        android:id="@+id/lsq_face_detect_start"
+        style="@style/lsq_button_setting"
+        android:background="@color/lsq_color_purple"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/lsq_dimen_30"
+        android:text="@string/lsq_recognition_start"/>
+    </LinearLayout>
+</LinearLayout>

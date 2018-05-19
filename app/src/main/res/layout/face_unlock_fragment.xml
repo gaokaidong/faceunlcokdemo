@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/lsq_color_white">
+
+    <include
+        android:id="@+id/lsq_navigation_bar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        layout="@layout/navigation_bar_view"/>
+
+    <SurfaceView
+        android:id="@+id/previewSurface"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/lsq_navigation_bar"
+        />
+
+</RelativeLayout>

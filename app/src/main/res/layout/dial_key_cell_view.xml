@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal">
+
+    <TextView
+        android:id="@+id/lsq_num_text"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:background="@drawable/round_text"
+        android:text="1"
+        android:textSize="@dimen/lsq_dimen_15"
+        android:textColor="@color/lsq_color_black"
+        android:gravity="center"/>
+
+</LinearLayout>
